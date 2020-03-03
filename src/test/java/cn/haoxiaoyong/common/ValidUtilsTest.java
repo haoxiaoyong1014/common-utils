@@ -13,6 +13,9 @@ import org.junit.Test;
  */
 public class ValidUtilsTest {
 
+    /**
+     * 测试 ValidUtils {@link ValidUtils}
+     */
     @Test
     public void testValidUtils() {
         User user = new User();

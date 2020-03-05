@@ -12,7 +12,7 @@ import java.util.List;
  * e-mail: hxyHelloWorld@163.com
  * github:https://github.com/haoxiaoyong1014
  * Blog: www.haoxiaoyong.cn
- * 单个对象以及集合之间浅拷贝
+ * Bean以及集合之间浅拷贝
  */
 
 public class ConverterUtils {

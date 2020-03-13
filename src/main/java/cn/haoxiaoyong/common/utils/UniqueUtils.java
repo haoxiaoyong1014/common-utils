@@ -19,7 +19,7 @@ import java.util.stream.Stream;
  */
 public class UniqueUtils {
 
-    public static <T> List<T> distinctByKey(List<T> t, String field) {
+    public static <T> List<T> distinctByKeys(List<T> t, String... fields) {
         Stream<T> tStream = t.stream().filter(new Predicate<T>() {
             Map<Object, Boolean> seen = new ConcurrentHashMap<>(10);
 
@@ -27,11 +27,13 @@ public class UniqueUtils {
             public boolean test(T t) {
                 boolean flag = false;
                 try {
-                    Field declaredField = t.getClass().getDeclaredField(field);
-                    declaredField.setAccessible(true);
-                    flag = seen.putIfAbsent(declaredField.get(t), Boolean.TRUE) == null;
+                    for (String field : fields) {
+                        Field declaredField = t.getClass().getDeclaredField(field);
+                        declaredField.setAccessible(true);
+                        flag = seen.putIfAbsent(declaredField.get(t), Boolean.TRUE) == null;
+                    }
                 } catch (NoSuchFieldException | IllegalAccessException e) {
-                   e.printStackTrace();
+                    e.printStackTrace();
                 }
                 return flag;
             }

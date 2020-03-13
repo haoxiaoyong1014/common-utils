@@ -2,13 +2,9 @@ package cn.haoxiaoyong.common;
 
 import cn.haoxiaoyong.common.domain.Persion;
 import cn.haoxiaoyong.common.utils.UniqueUtils;
-import javafx.util.converter.PercentageStringConverter;
 import org.junit.Test;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author haoxiaoyong on 2020/3/13 下午 2:27

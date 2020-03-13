@@ -26,7 +26,7 @@ public class UniqueUtilsTest {
     }
 
     static {
-        list2.add(new Persion("张思睿", 26));
+        list2.add(new Persion("张思睿", 22));
         list2.add(new Persion("里斯", 24));
         list2.add(new Persion("王武", 25));
         list2.add(new Persion("张思睿", 26));

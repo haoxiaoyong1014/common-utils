@@ -18,4 +18,12 @@ public class Persion {
     private String gender;
 
     private String hobby;
+
+    public Persion() {
+    }
+
+    public Persion(String username, Integer age) {
+        this.username = username;
+        this.age = age;
+    }
 }

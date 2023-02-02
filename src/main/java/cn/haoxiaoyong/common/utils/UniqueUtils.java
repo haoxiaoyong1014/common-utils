@@ -17,7 +17,7 @@ import java.util.stream.Stream;
  */
 public class UniqueUtils {
 
-    public static <T> List<T> distinctByKeys(List<T> t, String... fields) {
+    public static <T> List<T> distinctByKeys(List<T> t, final String... fields) {
         Stream<T> tStream = t.stream().filter(new Predicate<T>() {
             Map<Object, Boolean> seen = new ConcurrentHashMap<>(10);
 

@@ -7,4 +7,8 @@ package cn.haoxiaoyong.common;
  * Blog: www.haoxiaoyong.cn
  */
 public class Application {
+
+    public static void main(String[] args) {
+        System.out.println("这是一个有bug的功能-UniqueUtils");
+    }
 }

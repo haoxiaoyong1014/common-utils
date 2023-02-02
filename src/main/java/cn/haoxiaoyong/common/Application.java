@@ -9,6 +9,6 @@ package cn.haoxiaoyong.common;
 public class Application {
 
     public static void main(String[] args) {
-        System.out.println("这是一个有bug的功能-UniqueUtils");
+        System.out.println("这是修复了bug的分支-UniqueUtils");
     }
 }

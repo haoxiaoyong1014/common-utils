@@ -19,7 +19,7 @@ public class UniqueUtils {
 
     public static <T> List<T> distinctByKeys(List<T> t, final String... fields) {
         Stream<T> tStream = t.stream().filter(new Predicate<T>() {
-            Map<Object, Boolean> seen = new ConcurrentHashMap<>(10);
+            final Map<Object, Boolean> seenMap = new ConcurrentHashMap<>(10);
 
             @Override
             public boolean test(T t) {
@@ -28,7 +28,7 @@ public class UniqueUtils {
                     for (String field : fields) {
                         Field declaredField = t.getClass().getDeclaredField(field);
                         declaredField.setAccessible(true);
-                        flag = seen.putIfAbsent(declaredField.get(t), Boolean.TRUE) == null;
+                        flag = seenMap.putIfAbsent(declaredField.get(t), Boolean.TRUE) == null;
                     }
                 } catch (NoSuchFieldException | IllegalAccessException e) {
                     e.printStackTrace();
